@@ -63,4 +63,14 @@ ratio_rented = num_bikes_rented / total_bikes
 # Add a new variable for each divvy station's entry, "percent_bikes_remaining", that shows 
 # the percentage of bikes available at each individual station (again ignore ebikes). 
 # This variable should be formatted as a percentage rounded to 2 decimal places, e.g. 66.67%
+new_list = []
+
+for i in divvy_stations:
+    i["percent_bikes_remaining"] = "%.2f%%"%(100*(float(i["num_bikes_available"]) / (float(i["num_bikes_disabled"]) +
+    float(i["num_docks_available"]) +
+    float(i["num_bikes_available"]))))
+
+    new_list.append(i)
+
+# print(new_list)
 
